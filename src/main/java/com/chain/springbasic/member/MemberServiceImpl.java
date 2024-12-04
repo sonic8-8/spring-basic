@@ -2,11 +2,7 @@ package com.chain.springbasic.member;
 
 public class MemberServiceImpl implements MemberService {
 
-    private MemberRepository memberRepository = new MemoryMemberRepository();
-
-    public MemberServiceImpl(MemberRepository memberRepository) {
-        this.memberRepository = memberRepository;
-    }
+    private final MemberRepository memberRepository = new MemoryMemberRepository();
 
     @Override
     public void join(Member member) {
