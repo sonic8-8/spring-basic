@@ -1,5 +1,7 @@
 package com.chain.springbasic.member;
 
+import com.chain.springbasic.AppConfig;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -7,7 +9,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class MemberServiceTest {
 
-    MemberService memberService = new MemberServiceImpl();
+    AppConfig appConfig = new AppConfig();
+    MemberService memberService;
+
+    @BeforeEach
+    public void beforeEach() {
+        memberService = appConfig.memberService();
+    }
 
     @DisplayName("회원 가입 할 수 있다.")
     @Test
