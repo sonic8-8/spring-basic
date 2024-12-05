@@ -1,9 +1,8 @@
-package com.chain.springbasic.beanfind;
+package com.chain.springbasic.beanFind;
 
 import com.chain.springbasic.AppConfig;
 import com.chain.springbasic.member.MemberService;
 import com.chain.springbasic.member.MemberServiceImpl;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;

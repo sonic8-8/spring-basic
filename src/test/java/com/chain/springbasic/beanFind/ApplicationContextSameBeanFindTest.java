@@ -1,9 +1,7 @@
-package com.chain.springbasic.beanfind;
+package com.chain.springbasic.beanFind;
 
-import com.chain.springbasic.AppConfig;
 import com.chain.springbasic.member.MemberRepository;
 import com.chain.springbasic.member.MemoryMemberRepository;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoUniqueBeanDefinitionException;

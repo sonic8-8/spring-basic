@@ -1,9 +1,8 @@
-package com.chain.springbasic.beanfind;
+package com.chain.springbasic.beanFind;
 
 import com.chain.springbasic.discount.DiscountPolicy;
 import com.chain.springbasic.discount.FixDiscountPolicy;
 import com.chain.springbasic.discount.RateDiscountPolicy;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoUniqueBeanDefinitionException;
