@@ -1,20 +1,26 @@
 package com.chain.springbasic.order;
 
+import com.chain.springbasic.AppConfig;
 import com.chain.springbasic.member.Grade;
 import com.chain.springbasic.member.Member;
 import com.chain.springbasic.member.MemberService;
-import com.chain.springbasic.member.MemberServiceImpl;
-import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class OrderServiceImplTest {
 
-    private final MemberService memberService = new MemberServiceImpl();
-    private OrderService orderService = new OrderServiceImpl();
+    AppConfig appConfig = new AppConfig();
+    MemberService memberService;
+    OrderService orderService;
+
+    @BeforeEach
+    public void beforeEach() {
+        memberService = appConfig.MemberService();
+        orderService = appConfig.OrderService();
+    }
 
     @DisplayName("주문을 생성할 수 있다.")
     @Test
