@@ -18,8 +18,8 @@ class OrderServiceImplTest {
 
     @BeforeEach
     public void beforeEach() {
-        memberService = appConfig.MemberService();
-        orderService = appConfig.OrderService();
+        memberService = appConfig.memberService();
+        orderService = appConfig.orderService();
     }
 
     @DisplayName("주문을 생성할 수 있다.")

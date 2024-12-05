@@ -1,7 +1,6 @@
 package com.chain.springbasic.member;
 
 import com.chain.springbasic.AppConfig;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -15,7 +14,7 @@ class MemberServiceTest {
 
     @BeforeEach
     public void beforeEach() {
-        memberService = appConfig.MemberService();
+        memberService = appConfig.memberService();
     }
 
     @DisplayName("회원 가입 할 수 있다.")

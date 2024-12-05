@@ -11,12 +11,20 @@ import com.chain.springbasic.order.OrderServiceImpl;
 
 public class AppConfig {
 
-    public MemberService MemberService() {
-        return new MemberServiceImpl(new MemoryMemberRepository());
+    public MemberService memberService() {
+        return new MemberServiceImpl(memberRepository());
     }
 
-    public OrderService OrderService() {
-        return new OrderServiceImpl(new MemoryMemberRepository(), new FixDiscountPolicy());
+    public OrderService orderService() {
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
+    }
+
+    private MemberRepository memberRepository() {
+        return new MemoryMemberRepository();
+    }
+
+    private DiscountPolicy discountPolicy() {
+        return new FixDiscountPolicy();
     }
 
 }
