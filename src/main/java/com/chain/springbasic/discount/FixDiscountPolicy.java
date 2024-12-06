@@ -2,6 +2,8 @@ package com.chain.springbasic.discount;
 
 import com.chain.springbasic.member.Grade;
 import com.chain.springbasic.member.Member;
+import org.springframework.stereotype.Component;
+
 
 public class FixDiscountPolicy implements DiscountPolicy {
 
