@@ -31,4 +31,6 @@ class MemberServiceTest {
         assertThat(member).isEqualTo(member1);
     }
 
+
+
 }
