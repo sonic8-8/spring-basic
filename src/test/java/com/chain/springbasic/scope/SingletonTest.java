@@ -24,6 +24,23 @@ public class SingletonTest {
         Assertions.assertThat(singletonBean1).isSameAs(singletonBean2);
     }
 
+    @DisplayName("프로토타입 빈은 요청할 때마다 새로 생성된다")
+    @Test
+    void prototypeScope() {
+        // given
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(PrototypeBean.class);
+
+        // when
+        PrototypeBean prototypeBean1 = ac.getBean(PrototypeBean.class);
+        PrototypeBean prototypeBean2 = ac.getBean(PrototypeBean.class);
+
+        // then
+        Assertions.assertThat(prototypeBean1).isNotSameAs(prototypeBean2);
+        ac.close();
+    }
+
+
+
     @Scope("singleton")
     static class SingletonBean {
 
@@ -35,6 +52,20 @@ public class SingletonTest {
         @PreDestroy
         public void destroy() {
             System.out.println("SingletonBean destroy");
+        }
+    }
+
+    @Scope("prototype")
+    static class PrototypeBean {
+
+        @PostConstruct
+        public void init() {
+            System.out.println("PrototypeBean init");
+        }
+
+        @PreDestroy
+        public void destroy() {
+            System.out.println("PrototypeBean destroy");
         }
     }
 }
